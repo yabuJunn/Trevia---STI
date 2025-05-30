@@ -1,0 +1,62 @@
+#upperNavbarLanding {
+    width: 100%;
+    height: 5vh;
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#upperNavbarLanding .logoLanding {
+    height: 100%;
+    margin-left: 2rem;
+}
+
+#navNavigationLanding {
+    margin-right: 2rem;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+}
+
+#navNavigationLanding button {
+    height: 100%;
+    width: 10vw;
+    border: none;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+    font-family: Montserrat;
+
+}
+
+#navNavigationLanding #navLoging {
+    background-color: #FFFFFF;
+    color: #0073E5;
+    border: 1px solid #0073E5;
+
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#navNavigationLanding #navRegister {
+    background-color: #0073E6;
+    color: #FFFFFF;
+
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
