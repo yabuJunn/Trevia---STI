@@ -1,0 +1,65 @@
+.landingPageContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 95vh;
+}
+
+.landingPageBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.landingPageText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 35%;
+    margin-left: 4rem;
+}
+
+.landingPageText h1 {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.landingPageText p {
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-bottom: 2rem;
+}
+
+.landingPageText button {
+    width: 10vw;
+    height: 5vh;
+    background-color: #0073E6;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
