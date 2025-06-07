@@ -1,0 +1,25 @@
+#registerLoginPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.registerLoginPageImage {
+    width: 40%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerLoginPageImage img {
+    width: 100%;
+    height: auto;
+}
+
+.registerLoginPageContent {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

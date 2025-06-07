@@ -1,10 +1,14 @@
 import "./landingPage.css"
 
+import { NavigationHook } from "../../hooks/navigationHook"
+
 import { UpperNavbar } from "../../components/landingPage/upperNavbar/upperNavbar"
 
 import landingPageBackground from "../../assets/jpg/landingPage/landingPageBackground.jpg"
 
 export const LandingPage = () => {
+    const { handleNavigation } = NavigationHook();
+
     return <>
         <main className="page" id="landingPage">
             <UpperNavbar></UpperNavbar>
@@ -15,7 +19,7 @@ export const LandingPage = () => {
                 <div className="landingPageText">
                     <h1>Vuela</h1>
                     <p>Viaja con tus amigos al destino ideal con nuestras recomendaciones  segun los gustos y preferencias de cada uno.</p>
-                    <button>
+                    <button onClick={() => { handleNavigation.navigateToRegister() }}>
                         Comenzar
                     </button>
                 </div>
