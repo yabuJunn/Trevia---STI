@@ -1,0 +1,57 @@
+.globalSideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15vw;
+    height: 100%;
+    background-color: #000266D1;
+    color: white;
+    overflow-y: auto;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 1rem;
+}
+
+.globalSideBar img {
+    margin-top: 2rem;
+    width: 50%;
+}
+
+.globalSideBar .globalSideBarContent {
+    margin-top: 2rem;
+}
+
+.globalSideBar .globalSideBarContent p {
+    color: #FFF3F3;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.logOutContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.logOutContent img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+}
+
+.logOutContent p {
+    color: #FFF3F3;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

@@ -2,6 +2,7 @@ import { NavigationRoutes } from "../hooks/navigationHook"
 
 import { LandingPage } from "../pages/landingPage/landingPage"
 import { RegisterLoginPage } from "../pages/registerLoginPage/registerLoginPage"
+import { DashboardPage } from "../pages/dashboardPage/dashboardPage"
 
 export const mainRoutes = [
     {
@@ -15,5 +16,9 @@ export const mainRoutes = [
     {
         path: NavigationRoutes.Login,
         element: <RegisterLoginPage></RegisterLoginPage>,
+    },
+    {
+        path: NavigationRoutes.Dashboard,
+        element: <DashboardPage></DashboardPage>,
     }
 ]
