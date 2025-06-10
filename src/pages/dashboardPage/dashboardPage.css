@@ -1,0 +1,39 @@
+.dashboardPageContent {
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 17.1vw;
+    background-color: #EBEFF8;
+}
+
+.dashboardPageHeader {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: 2rem 0 0 2rem;
+}
+
+.dashboardPageHeader h1 {
+    color: #2E2F82;
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.dashboardPageHeader p {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.dashboardPageMainContent {
+    margin: 2rem;
+    border-radius: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.70);
+    width: 79%;
+    height: 79vh;
+}
