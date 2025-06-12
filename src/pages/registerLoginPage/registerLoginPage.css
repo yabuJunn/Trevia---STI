@@ -4,7 +4,7 @@
 }
 
 .registerLoginPageImage {
-    width: 40%;
+    width: 30%;
     background-color: aqua;
     display: flex;
     justify-content: center;
@@ -12,8 +12,7 @@
 }
 
 .registerLoginPageImage img {
-    width: 100%;
-    height: auto;
+    height: 100vh;
 }
 
 .registerLoginPageContent {

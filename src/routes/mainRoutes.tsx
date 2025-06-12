@@ -3,6 +3,7 @@ import { NavigationRoutes } from "../hooks/navigationHook"
 import { LandingPage } from "../pages/landingPage/landingPage"
 import { RegisterLoginPage } from "../pages/registerLoginPage/registerLoginPage"
 import { DashboardPage } from "../pages/dashboardPage/dashboardPage"
+import { QuestionnairePage } from "../pages/questionnairePage/questionnairePage"
 
 export const mainRoutes = [
     {
@@ -20,5 +21,9 @@ export const mainRoutes = [
     {
         path: NavigationRoutes.Dashboard,
         element: <DashboardPage></DashboardPage>,
+    },
+    {
+        path: NavigationRoutes.Questionnaire,
+        element: <QuestionnairePage></QuestionnairePage>
     }
 ]
