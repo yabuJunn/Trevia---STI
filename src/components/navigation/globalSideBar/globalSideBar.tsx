@@ -2,11 +2,15 @@ import "./globalSideBar.css"
 
 import { logOutSupabase } from "../../../services/supabase/supabaseLogOut"
 import { NavigationHook } from "../../../hooks/navigationHook"
+import { useSelector } from "react-redux"
+import { type RootState } from "../../../store/store"
 
 import logoTrevioWhite from "../../../assets/svg/logos/logoTrevioWhite.svg"
 import logoutIcon from "../../../assets/svg/icons/logout.svg"
 
 export const GlobalSideBar = () => {
+    const user = useSelector((state: RootState) => state.user.profile); // Asegúrate de que el estado de autenticación esté configurado correctamente
+    
     const { handleNavigation } = NavigationHook();
 
     const handleLogout = async () => {
@@ -24,8 +28,8 @@ export const GlobalSideBar = () => {
             <img src={logoTrevioWhite} alt="Logo Trevio" />
 
             <div className="globalSideBarContent">
-                <p>Pepito Perez</p>
-                <p>pepitoperez@gmail.com</p>
+                <p>{user?.name}</p>
+                <p>{user?.email}</p>
             </div>
 
             <div className="logOutContent" onClick={handleLogout}>
