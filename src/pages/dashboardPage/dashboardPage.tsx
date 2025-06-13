@@ -1,6 +1,9 @@
 import "./dashboardPage.css";
+
 import { GlobalSideBar } from "../../components/navigation/globalSideBar/globalSideBar";
 import { GroupCard } from "../../components/dashboardPage/dashboardTravelRecomendation/dashboardTravelRecomendation";
+import { getUser } from "../../services/supabase/supabaseGetUser";
+import { useEffect } from "react";
 
 // Mock de datos como base para Supabase
 const mockGroups = [
@@ -26,6 +29,19 @@ export const DashboardPage = () => {
   const handleClick = (id: number) => {
     console.log("Clic en grupo ID:", id);
   };
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const result = await getUser();
+      if (result.success) {
+        console.log("User data:", result.data);
+      } else {
+        console.error("Error fetching user data:", result.message);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   return (
     <>
