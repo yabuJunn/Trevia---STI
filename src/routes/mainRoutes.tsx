@@ -4,6 +4,7 @@ import { LandingPage } from "../pages/landingPage/landingPage"
 import { RegisterLoginPage } from "../pages/registerLoginPage/registerLoginPage"
 import { DashboardPage } from "../pages/dashboardPage/dashboardPage"
 import { QuestionnairePage } from "../pages/questionnairePage/questionnairePage"
+import { TravelDetailsPage } from "../pages/travelDetails/travelDetails"
 
 export const mainRoutes = [
     {
@@ -25,5 +26,9 @@ export const mainRoutes = [
     {
         path: NavigationRoutes.Questionnaire,
         element: <QuestionnairePage></QuestionnairePage>
+    },
+    {
+        path: NavigationRoutes.TravelDetails,
+        element: <TravelDetailsPage></TravelDetailsPage>
     }
 ]
