@@ -1,0 +1,120 @@
+.newTravelBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.newTravelBackground img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* overlay de contenido */
+.newTravelOverlay {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 24px 24px;
+    /* deja espacio en top */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin: 0 0 0 45rem;
+
+    font-family: Montserrat;
+}
+
+/* título */
+.newTravelOverlay h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* fila input + botón + */
+.inputContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.inputContainer input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.inputContainer input::placeholder {
+    color: #666;
+}
+
+.btn-add-member {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    color: #3d2c8d;
+    font-size: 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* lista de miembros */
+.memberList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.memberList li {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #000;
+}
+
+.memberList li:last-child {
+    border-bottom: none;
+}
+
+.member-index {
+    width: 24px;
+    font-weight: bold;
+    color: #007aff;
+}
+
+.member-name {
+    margin-left: 16px;
+}
+
+/* botón siguiente */
+.btn-next {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.btn-next .icon-next {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
