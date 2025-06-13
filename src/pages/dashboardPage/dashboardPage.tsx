@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../store/userSlice";
 import type { RootState } from "../../store/store";
+import { NavigationHook } from "../../hooks/navigationHook";
 import React from "react";
 
 
@@ -46,6 +47,8 @@ import React from "react";
 export const DashboardPage: React.FC = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user.profile);
+  const { handleNavigation } = NavigationHook()
+
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -122,7 +125,7 @@ export const DashboardPage: React.FC = () => {
               <GroupCard
                 key={grp.id}
                 type="newGroup"
-                onClick={() => handleClick(grp.id)}
+                onClick={() => handleNavigation.navigateToNewTravel()}
               />
             );
           })}
