@@ -8,13 +8,15 @@ export type UserProfile = {
     groups: group[];
 };
 
-type group = {
+export type group = {
     id: number;
     type: "beforeRecommendation" | "afterRecommendation" | "newGroup";
     members?: groupMembers[];
+    imageUrl?: string;
+    destination?: string;
 }
 
-type groupMembers = {
+export type groupMembers = {
     name: string;
     questionnaireCompleted: boolean;
     questionnaireData?: {
