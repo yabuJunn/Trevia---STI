@@ -1,6 +1,10 @@
 import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 import './questionnairePage.css';
 import questionnaireBannerSideImage from '../../assets/jpg/questionnairePage/questionnairePageSideImage.jpg';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../store/store';
+import { updateMemberQuestionnaire } from '../../services/supabase/supabaseUpdateGroupMember';
+import { NavigationHook } from '../../hooks/navigationHook';
 
 type FormData = {
   // Página 1
@@ -14,6 +18,12 @@ type FormData = {
 };
 
 export const QuestionnairePage: React.FC = () => {
+  const currentUser = useSelector((state: RootState) => state.user.profile);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroup);
+  const memberName = useSelector((state: RootState) => state.group.currentQuestionaireName);
+
+  const { handleNavigation } = NavigationHook()
+
   const [page, setPage] = useState<1 | 2>(1);
   const [formData, setFormData] = useState<FormData>({
     destination: '',
@@ -42,11 +52,25 @@ export const QuestionnairePage: React.FC = () => {
   const goNext = () => setPage(2);
   const goBack = () => setPage(1);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log('Datos capturados:', formData);
-    // aquí podrías enviar a tu API / Supabase...
-  };
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    // formData ya tiene las respuestas...
+    if (currentUser && selectedGroupId && memberName) {
+      const result = await updateMemberQuestionnaire(
+        currentUser.id,
+        selectedGroupId,
+        memberName,
+        formData
+      )
+      if (!result.success) {
+        console.error('Error al guardar respuestas:', result.message)
+      } else {
+        console.log('Grupo actualizado:', result.updatedGroup)
+        handleNavigation.navigateToTravelDetails()
+      }
+    }
+
+  }
 
   return (
     <section className="page" id="questionnairePage">
@@ -58,7 +82,7 @@ export const QuestionnairePage: React.FC = () => {
           {page === 1 && (
             <div className="question-page">
               <h2>1. ¿Qué tipo de destino prefieres?</h2>
-              {['Playa','Montaña','Ciudad','Naturaleza','Aventura'].map((opt) => (
+              {['Playa', 'Montaña', 'Ciudad', 'Naturaleza', 'Aventura'].map((opt) => (
                 <label key={opt}>
                   <input
                     type="radio"
@@ -93,7 +117,7 @@ export const QuestionnairePage: React.FC = () => {
               ))}
 
               <h2>3. ¿Cuál es tu presupuesto?</h2>
-              {['Económico ($)','Medio ($$)','Alto ($$$)'].map((opt) => (
+              {['Económico ($)', 'Medio ($$)', 'Alto ($$$)'].map((opt) => (
                 <label key={opt}>
                   <input
                     type="radio"
@@ -115,7 +139,7 @@ export const QuestionnairePage: React.FC = () => {
           {page === 2 && (
             <div className="question-page">
               <h2>4. ¿Qué tipo de alojamiento prefieres?</h2>
-              {['Hostal','Hotel','Apartamento / Airbnb','Camping','Todo incluido'].map((opt) => (
+              {['Hostal', 'Hotel', 'Apartamento / Airbnb', 'Camping', 'Todo incluido'].map((opt) => (
                 <label key={opt}>
                   <input
                     type="radio"
@@ -147,7 +171,7 @@ export const QuestionnairePage: React.FC = () => {
               ))}
 
               <h2>6. ¿Qué tipo de clima prefieres?</h2>
-              {['Cálido y soleado','Templado / Primaveral','Frío y nevado','No tengo preferencia'].map((opt) => (
+              {['Cálido y soleado', 'Templado / Primaveral', 'Frío y nevado', 'No tengo preferencia'].map((opt) => (
                 <label key={opt}>
                   <input
                     type="radio"

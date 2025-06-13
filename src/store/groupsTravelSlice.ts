@@ -3,12 +3,14 @@ import { type group } from '../services/supabase/supabaseGetUser';
 
 export interface GroupState {
     currentGroup: group | null;
-    selectedGroup: number | null
+    selectedGroup: number | null,
+    currentQuestionaireName: string | null
 }
 
 const initialState: GroupState = {
     currentGroup: null,
-    selectedGroup: null
+    selectedGroup: null,
+    currentQuestionaireName: null
 };
 
 const groupSlice = createSlice({
@@ -27,9 +29,12 @@ const groupSlice = createSlice({
         clearSelectedGroup: (state) => {
             state.selectedGroup = null
         },
+        setCurrentQuestionaireName: (state, action: PayloadAction<string>) => {
+            state.currentQuestionaireName = action.payload
+        },
     }
 });
 
-export const { setGroup, setSelectedGroup, clearGroup, clearSelectedGroup} = groupSlice.actions;
+export const { setGroup, setSelectedGroup, clearGroup, clearSelectedGroup, setCurrentQuestionaireName } = groupSlice.actions;
 
 export default groupSlice.reducer;
