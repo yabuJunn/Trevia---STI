@@ -1,4 +1,3 @@
-// src/features/user/userSlice.ts
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { type UserProfile } from '../services/supabase/supabaseGetUser';
 

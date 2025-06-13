@@ -9,6 +9,7 @@ import { setUser } from "../../store/userSlice";
 import type { RootState } from "../../store/store";
 import { NavigationHook } from "../../hooks/navigationHook";
 import React from "react";
+import { setSelectedGroup } from "../../store/groupsTravelSlice";
 
 
 // const mockGroups: group[] = [
@@ -64,6 +65,8 @@ export const DashboardPage: React.FC = () => {
 
   const handleClick = (id: number) => {
     console.log('Clic en grupo ID:', id);
+    dispatch(setSelectedGroup(id))
+    handleNavigation.navigateToTravelDetails()
   };
 
   // Preparamos el array de grupos + el nuevo grupo al final

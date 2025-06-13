@@ -1,11 +1,12 @@
 // src/app/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './userSlice';
+import groupReducer from './groupsTravelSlice'
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    // aquí puedes añadir más slices en el futuro
+    group: groupReducer
   },
 });
 
